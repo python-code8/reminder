@@ -1,0 +1,15 @@
+import time
+from win10toast import ToastNotifier
+
+def timer(message,minutes):
+    minutes = int(minutes)
+    notifier = ToastNotifier()
+    time.sleep(minutes * 60)
+    notifier.show_toast(f"Reminder",message,duration=50)
+
+if __name__ == "__main__":
+    print("\nEnter the message to remind you" )
+    message = input()
+    print("\nEnter minutes after which you will be reminded:" )
+    minutes = input()#if you enter 5 it reminds you after 5 minutes
+    timer(message,minutes)
